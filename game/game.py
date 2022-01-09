@@ -1,6 +1,6 @@
 import copy
-from board import Board
-from game_states_check import is_mate, is_draw
+from game.board import Board
+from game.game_states_check import is_mate, is_draw
 
 
 class Game:

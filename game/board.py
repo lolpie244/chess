@@ -1,7 +1,7 @@
 import copy
 
 from chess_pieces.piece import Piece
-from game_states_check import is_check
+from game.game_states_check import is_check
 
 
 class Board:

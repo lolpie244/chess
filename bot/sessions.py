@@ -72,8 +72,8 @@ class Session:
 class Sessions:
     session_list = {}
 
-    def add_session(self, message: types.Message):
-        self.session_list[message.message_id] = Session()
+    def add_session(self, id_):
+        self.session_list[id_] = Session()
 
     def __getitem__(self, item):
-        return self.session_list[item.message_id]
+        return self.session_list[item]
