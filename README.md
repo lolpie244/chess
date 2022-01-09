@@ -1,2 +1,2 @@
 # chess
-chess in telegram bots
+chess in telegram bot
