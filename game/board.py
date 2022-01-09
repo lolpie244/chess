@@ -24,7 +24,7 @@ class Board:
         self.turn_count = 0
         self.pieces = {'white': [], 'black': []}
         self.board = [[None for _ in range(8)] for _ in range(8)]
-        self.draw_board = [[' ' for _ in range(8)] for _ in range(8)]
+        self.draw_board = [['·' if (i + j)% 2 == 0 else ' ️' for i in range(8)] for j in range(8)]
         self.fill_side('white')
         self.fill_side('black')
         self.kings = {'white': self.__getitem__([7, 4]), 'black': self.__getitem__([0, 4])}
@@ -50,7 +50,8 @@ class Board:
         self.__setitem__(piece.pos, piece)
         self.__setitem__(old_pos, None)
         self.draw_board[new_pos[0]][new_pos[1]] = self.draw_board[old_pos[0]][old_pos[1]]
-        self.draw_board[old_pos[0]][old_pos[1]] = ' '
+        self.draw_board[old_pos[0]][old_pos[1]] = '·' if (old_pos[0] + old_pos[1])% 2 == 0 else ' ️'
+
 
     def try_move_piece(self, piece, new_pos, is_try=False):
         if not(0 <= new_pos[0] <= 7 and 0 <= new_pos[1] <= 7):
